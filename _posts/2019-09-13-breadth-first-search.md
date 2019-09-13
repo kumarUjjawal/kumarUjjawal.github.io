@@ -4,8 +4,6 @@ title: "Looking at Breadth First Search Through Algorithm"
 date: 2019-09-13
 ---
 
-# Looking at Breadth-First Search Through Algorithm
-
 Breadth-first search is one of the simplest algorithms for searching a graph or traversing a tree. In BFS, you must traverse all the nodes in layer 1 before you move to the nodes in layer 2. That is
 1. First move horizontally and visit all the nodes of the current layer
 2. Move to the next layer
