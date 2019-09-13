@@ -5,10 +5,10 @@ layout: feed
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Paperview</title>
- <link href="http://kumarUjjawal.github.io/blog/atom.xml" rel="self"/>
- <link href="http://kumarUjjawal.github.io/blog"/>
+ <link href="http://kumarUjjawal.github.io/atom.xml" rel="self"/>
+ <link href="http://kumarUjjawal.github.io/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://kumarUjjawal.github.io/blog</id>
+ <id>http://kumarUjjawal.github.io/</id>
  <author>
    <name>Kumar Ujjawal</name>
    <email>ujjawalpathak6@gmail.com</email>
