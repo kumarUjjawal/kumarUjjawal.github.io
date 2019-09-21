@@ -27,8 +27,8 @@ The model uses hierarchical softmax where the vocabulary is represented as Huffm
 **Recurrent Neural Net Language Model (RNNLM)**
 
 Recurrent neural network based language model has been proposed to overcome certain limitations of the feedforward NNLM, such as the need to specify the context length (the order of the model N), and because theoretically RNNs can efficiently represent more complex patterns than the shallow neural networks. The RNN model does not have a projection layer; only input, hidden and output layer. The recurrent matrix that connects hidden layers to itself, using time delayed connections allows the recurrent model to form some kind of short term memory, as information from the past can be represented by the hidden layer state that gets updated based on the current input and the sate of the hidden layer in the previous time step.
-The complexity per training example of the RNN model is 
-			
+The complexity per training example of the RNN model is 			
+
 			**Q = H x H + H x V**
 
 Where the word representation D have the same dimensionality as the hidden layer H.
