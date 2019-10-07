@@ -8,7 +8,7 @@ The paper proposes new simple network architecture, the Transformer, based solel
 
 **Model Architecture**
 
-The encoder maps an input sequence of symbol representations (x~i~,…x~n~) to a sequence of continuous representations z = (z<sub>1<_sub>,…z<sub>n<_sub>). Given z, the decoder then generates an output sequence (y<sub>1<_sub>,…y<sub>m<_sub>) of symbols one element at a time. At each step the model is auto-regressive, consuming the previously generated symbols as additional input when generating a text.
+The encoder maps an input sequence of symbol representations (x<sub>i</sub>,…x<sub>n</sub>) to a sequence of continuous representations z = (z<sub>1<_sub>,…z<sub>n<_sub>). Given z, the decoder then generates an output sequence (y<sub>1</sub>,…y<sub>m</sub>) of symbols one element at a time. At each step the model is auto-regressive, consuming the previously generated symbols as additional input when generating a text.
 The Transformer follows this overall architecture using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder.
 
 **Encoder Stack**
@@ -25,13 +25,13 @@ An attention function can be described as mapping a query and a set of key-value
 
 **Scaled Dot-Product Attention**
 
-The attention in this model is called “Scaled Dot-Product Attention”. The input consists of queries and keys of dimension d<sub>k<_sub>, and values of dimension d<sub>v<_sub>. The dot products of the query with all keys is computed, then each was divided by √d<sub>k</sub>, and softmax function was applied to obtain the weights on the values.
+The attention in this model is called “Scaled Dot-Product Attention”. The input consists of queries and keys of dimension d<sub>k</sub>, and values of dimension d<sub>v</sub>. The dot products of the query with all keys is computed, then each was divided by √d<sub>k</sub>, and softmax function was applied to obtain the weights on the values.
 The attention function on a set of queries was computed simultaneously, packed together into a matrix Q. The keys and values are also packed together into matrices K and V. The matrix output is computed as :
-**Attention(Q,K,V) = softmax(QK<sup>T<_sup> / √d<sub>k<_sub>)**
+**Attention(Q,K,V) = softmax(QK<sup>T</sup> / √d<sub>k</sub>)**
 
 **Muti-Head Attention**
 
-Instead of performing a single attention function with d<sub>model<_sub>-dimensional keys, values and queries, it is beneficial to linearly project the queries, keys and values h times with different, learned linear projections to d<sub>k<_sub>, d<sub>k<_sub> and d<sub>v<_sub> dimensions, respectively. On each of these projected versions of queries, keys and values attention function in parallel, yielding d<sub>v</sub>-dimensional output values is performed. These are concatenated and once again projected, resulting in the final values. 
+Instead of performing a single attention function with d<sub>model</sub>-dimensional keys, values and queries, it is beneficial to linearly project the queries, keys and values h times with different, learned linear projections to d<sub>k</sub>, d<sub>k</sub> and d<sub>v</sub> dimensions, respectively. On each of these projected versions of queries, keys and values attention function in parallel, yielding d<sub>v</sub>-dimensional output values is performed. These are concatenated and once again projected, resulting in the final values. 
 Multi-head attention allows the model to jointly attend to information from different representations subspace at different positions.
 
 **Self Attention**
@@ -41,16 +41,16 @@ Self-Attention, sometimes called intra-attention is an attention mechanism relat
 **Position-wise Feed-Forward Networks**
 
 In addition to attention sub-layers, each of the layers in our encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically. This consists of two linear transformations with ReLu activation in between.
-**FFN(x) = max(0, xW<sub>1<_sub> + b<sub>1<_sub>)W<sub>2<_sub> + b<sub>2<_sub>**
+**FFN(x) = max(0, xW<sub>1</sub> + b<sub>1</sub>)W<sub>2<_sub> + b<sub>2</sub>**
 
 **Embeddings and Softmax**
 
-Similar to other sequence transduction models, learned embeddings to convert the input tokens and output tokens to vectors of dimension d<sub>model<_sub> is used. The usual learned linear transformation and softmax function to convert the decoder output to predicted next-token probabilities is used. In the model the same weight matrix between the two embedding layers and the pre-softmax linear transformation is shared. In embedding layers those weights are multiplied by √d<sub>model<_sub>.
+Similar to other sequence transduction models, learned embeddings to convert the input tokens and output tokens to vectors of dimension d<sub>model</sub> is used. The usual learned linear transformation and softmax function to convert the decoder output to predicted next-token probabilities is used. In the model the same weight matrix between the two embedding layers and the pre-softmax linear transformation is shared. In embedding layers those weights are multiplied by √d<sub>model</sub>.
 
 **Positional Encoding**
 
 To get some information about the relative or absolute position of the tokens in the sequence “positional encoding” is added to the input embeddings at the bottom of the encoder and decoder stacks. The positional encodings have the same dimension d<sub>model</sub> as the embeddings, so that the two can be summed. In this model, sine and cosine functions of different frequencies is used:
-**PE(pos,2i) = sin(pos_10000<sup>2i_d <sup><_sup>model<_sup>)**
-**PE(pos,2i+1) = cod(pos_10000<sup>2i_d <sup><_sup>model<_sup>)**
+**PE(pos,2i) = sin(pos/10000<sup>2i</sup>/d<sup>model</sup>)**
+**PE(pos,2i+1) = cod(pos/10000<sup>2i</sup>/d<sup>model</sup>)**
 
 Where pos is the position and i is the dimension.
