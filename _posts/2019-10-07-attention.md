@@ -8,7 +8,7 @@ The paper proposes new simple network architecture, the Transformer, based solel
 
 **Model Architecture**
 
-The encoder maps an input sequence of symbol representations (x<sub>i</sub>,…x<sub>n</sub>) to a sequence of continuous representations z = (z<sub>1<_sub>,…z<sub>n<_sub>). Given z, the decoder then generates an output sequence (y<sub>1</sub>,…y<sub>m</sub>) of symbols one element at a time. At each step the model is auto-regressive, consuming the previously generated symbols as additional input when generating a text.
+The encoder maps an input sequence of symbol representations (x<sub>i</sub>,…x<sub>n</sub>) to a sequence of continuous representations z = (z<sub>1</sub>,…z<sub>n</sub>). Given z, the decoder then generates an output sequence (y<sub>1</sub>,…y<sub>m</sub>) of symbols one element at a time. At each step the model is auto-regressive, consuming the previously generated symbols as additional input when generating a text.
 The Transformer follows this overall architecture using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder.
 
 **Encoder Stack**
@@ -41,7 +41,7 @@ Self-Attention, sometimes called intra-attention is an attention mechanism relat
 **Position-wise Feed-Forward Networks**
 
 In addition to attention sub-layers, each of the layers in our encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically. This consists of two linear transformations with ReLu activation in between.
-**FFN(x) = max(0, xW<sub>1</sub> + b<sub>1</sub>)W<sub>2<_sub> + b<sub>2</sub>**
+**FFN(x) = max(0, xW<sub>1</sub> + b<sub>1</sub>)W<sub>2</sub> + b<sub>2</sub>**
 
 **Embeddings and Softmax**
 
@@ -50,7 +50,8 @@ Similar to other sequence transduction models, learned embeddings to convert the
 **Positional Encoding**
 
 To get some information about the relative or absolute position of the tokens in the sequence “positional encoding” is added to the input embeddings at the bottom of the encoder and decoder stacks. The positional encodings have the same dimension d<sub>model</sub> as the embeddings, so that the two can be summed. In this model, sine and cosine functions of different frequencies is used:
-**PE(pos,2i) = sin(pos/10000<sup>2i</sup>/d<sup>model</sup>)**
-**PE(pos,2i+1) = cod(pos/10000<sup>2i</sup>/d<sup>model</sup>)**
+**PE(pos,2i) = sin(pos/10000<sup>2i</sup>/d<sub>model</sub>)**
+
+**PE(pos,2i+1) = cod(pos/10000<sup>2i</sup>/d<sub>model</sub>)**
 
 Where pos is the position and i is the dimension.
