@@ -42,6 +42,7 @@ Self-Attention, sometimes called intra-attention is an attention mechanism relat
 
 In addition to attention sub-layers, each of the layers in our encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically. This consists of two linear transformations with ReLu activation in between.
 
+
 **FFN(x) = max(0, xW<sub>1</sub> + b<sub>1</sub>)W<sub>2</sub> + b<sub>2</sub>**
 
 **Embeddings and Softmax**
