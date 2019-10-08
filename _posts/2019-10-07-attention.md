@@ -4,7 +4,7 @@ title: "Attention Is All You Need"
 date: 2019-10-07
 ---
 
-The paper proposes new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. It was found that the Transformer generalizes well to others tasks by applying it successfully to English constituency parsing both with large and limited training. The Transformer allows can reach a new state of the art in translation quality after being trained for as little as twelve hours on eight P100 GPUs.
+The paper proposes new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. It was found that the Transformer generalizes well to others tasks by applying it successfully to English constituency parsing both with large and limited training. The Transformer can reach a new state of the art in translation quality after being trained for as little as twelve hours on eight P100 GPUs.
 
 **Model Architecture**
 
