@@ -57,3 +57,5 @@ To get some information about the relative or absolute position of the tokens in
 **PE(pos,2i+1) = cod(pos/10000<sup>2i</sup>/d<sub>model</sub>)**
 
 Where pos is the position and i is the dimension.
+
+Read the original paper [here](https://arxiv.org/abs/1706.03762).
