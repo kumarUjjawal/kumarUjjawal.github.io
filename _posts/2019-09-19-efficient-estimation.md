@@ -56,7 +56,7 @@ Where C is the maximum distance of the words.
 * Because of the  much lower computational complexity, it is possible to compute very accurate high dimensional word vectors from much larger data sets.
 * Using DistBelief distributed framework, it should be possible to train the CBOW and Skip-gram models even on corpora with one trillion words, for basically unlimited size of the vocabulary.
 
-***Disclosure*
+**Disclosure**
 
 Most of the things are directly from the paper. This post is meant to be a one place for all the papers that I read and take notes.
-Read the original paper [here](https://arxiv.org/pdf/1301.3781.pdf)
+Read the original paper [here](https://arxiv.org/pdf/1301.3781.pdf).
