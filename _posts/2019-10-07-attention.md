@@ -58,4 +58,7 @@ To get some information about the relative or absolute position of the tokens in
 
 Where pos is the position and i is the dimension.
 
+***Disclosure*
+
+Most of the things are directly from the paper. This post is meant to be a one place for all the papers that I read and take notes.
 Read the original paper [here](https://arxiv.org/abs/1706.03762).
