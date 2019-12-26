@@ -12,7 +12,7 @@ The approach makes use of the sequence-to-sequence (*seq2seq*) framework describ
 
 ![an image alt text]({{ site.baseurl }}/images/conv1.png "an image title")
 
-Concretely, suppose that we observe a conversation with two turns: the first person utters “ABC”, and second person replies “WXYZ”. We can use a recurrent neural network, and train to map “ABC” to “WXYZ” as shown in Figure 1 above. The hidden state of the model when it receives the end of sequence symbol “<eos>” can be viewed as the *thought vector*because it stores the information of the sentence, or thought, “ABC”. 
+Concretely, suppose that we observe a conversation with two turns: the first person utters “ABC”, and second person replies “WXYZ”. We can use a recurrent neural network, and train to map “ABC” to “WXYZ” as shown in Figure 1 above. The hidden state of the model when it receives the end of sequence symbol “eos” can be viewed as the thought vector because it stores the information of the sentence, or thought, “ABC”. 
 Applying this technique to conversation modeling is also straightforward: the input sequence can be the concatenation of what has been conversed so far (the context), and the output sequence is the reply. 
 
 **Datasets**
@@ -35,7 +35,7 @@ The strength of this model lies in its simplicity and generality. We can use thi
 
 **Disclosure**
 
-Everythin is directly from the original paper. This post is meant to be a one place for all the papers that I read and take notes.
+Everything is directly from the original paper. This post is meant to be a one place for all the papers that I read and take notes.
 Read the original paper [here](https://arxiv.org/pdf/1506.05869.pdf).
 
 
